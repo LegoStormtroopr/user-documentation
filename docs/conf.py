@@ -41,7 +41,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.githubpages',
     'selenium_screenshots.screener',
-    'sphinxcontrib.fulltoc'
+    'sphinxcontrib.fulltoc',
+    'rst2pdf.pdfbuilder',
 ]
 
 rawfiles = ['CNAME']
@@ -173,3 +174,32 @@ texinfo_documents = [
 
 
 
+# -- Options for PDF output --------------------------------------------------
+# Grouping the document tree into PDF files. List of tuples
+# (source start file, target name, title, author, options).
+#
+# If there is more than one author, separate them with \\.
+# For example: r'Guido van Rossum\\Fred L. Drake, Jr., editor'
+#
+# The options element is a dictionary that lets you override
+# this config per-document.
+# For example,
+# ('index', u'MyProject', u'My Project', u'Author Name',
+# dict(pdf_compressed = True))
+# would mean that specific document would be compressed
+# regardless of the global pdf_compressed setting.
+pdf_documents = [
+ ('index', u'MyProject', u'My Project', u'Author Name'),
+]
+# A comma-separated list of custom stylesheets. Example:
+pdf_stylesheets = ['sphinx','kerning','a4']
+# A list of folders to search for stylesheets. Example:
+pdf_style_path = ['.', '_styles']
+# Create a compressed PDF
+# Use True/False or 1/0
+# Example: compressed=True
+#pdf_compressed = False
+# A colon-separated list of folders to search for fonts. Example:
+# pdf_font_path = ['/usr/share/fonts', '/usr/share/texmf-dist/fonts/']
+# Language to be used for hyphenation support
+#pdf_language = "en_US"
